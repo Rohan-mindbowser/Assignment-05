@@ -3,7 +3,7 @@ function validateName(req, res, next) {
 
   var api_name = req.body.name;
   // console.log(/^[a-zA-Z]+$/.test(api_name))
-  if (/^[a-zA-Z]+$/.test(api_name) === false) {
+  if (/^[a-zA-Z\s]*$/.test(api_name) === false) {
     res.status(500);
     res.send("Name must contain only alphabetics characters [A-Z | a-z]");
   } else if (
